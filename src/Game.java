@@ -21,7 +21,7 @@ public class Game extends Canvas implements IGame, Runnable{
 		initFocusListener();
 	}
 	
-	//слушатель на событие потери, приобретения фокуса окна
+	//слушатель на событие потери, приобретения фокуса окна (открыто/свернуто)
 	private void initFocusListener() {
 		// TODO Auto-generated method stub
 		addFocusListener(new FocusListener(){
@@ -39,7 +39,7 @@ public class Game extends Canvas implements IGame, Runnable{
 	private void initAction() {
 		// TODO Auto-generated method stub
 		action=new Action();
-		addKeyListener(action);				//??????
+		addKeyListener(action);			
 	}
 	
 	@Override
@@ -56,11 +56,11 @@ public class Game extends Canvas implements IGame, Runnable{
 			long passedTime=now-prevIterTime;
 			prevIterTime=now;
 			
-			Graphics2D g=(Graphics2D)getBufferStrategy().getDrawGraphics();			//!!!!!!
+			Graphics2D g=(Graphics2D)getBufferStrategy().getDrawGraphics();			
 			scene.update(passedTime);
 			scene.draw(g);
 			//отобразить движение на экране
-			getBufferStrategy().show();									//!!!!!!!!
+			getBufferStrategy().show();									
 			
 		}
 	}
