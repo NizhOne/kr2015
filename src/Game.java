@@ -3,7 +3,6 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
-import java.awt.event.KeyListener;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 
@@ -40,7 +39,7 @@ public class Game extends Canvas implements IGame, Runnable{
 	private void initAction() {
 		// TODO Auto-generated method stub
 		action=new Action();
-		addKeyListener((KeyListener) action);				//??????
+		addKeyListener(action);				//??????
 	}
 	
 	@Override
@@ -69,7 +68,7 @@ public class Game extends Canvas implements IGame, Runnable{
 	@Override
 	public void start() {
 		// TODO Auto-generated method stub
-		if (isRunning.compareAndSet(true, false)){			//!!!!!
+		if (isRunning.compareAndSet(false, true)){			//!!!!!
 			gameT=new Thread(this);
 			gameT.start();
 		}

@@ -23,6 +23,7 @@ public class Frame{
 		frame.setLocationRelativeTo(null);
 		
 		frame.addWindowListener(new WindowAdapter(){		//!!!!
+			@Override
 			public void windowClosing(WindowEvent e){
 				game.pause();
 			}
